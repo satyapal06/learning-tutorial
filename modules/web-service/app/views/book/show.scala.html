@@ -1,0 +1,9 @@
+@(book: Book)
+
+@layout(book.getTitle) {
+    <h2>@book.getTitle</h2>
+    <p>Price: @book.getPrice</p>
+    <p>Author: @book.getAuthor</p>
+    <a class="btn btn-primary" href="@routes.BookController.edit(book.getId)">Edit</a>
+    <button class="btn btn-danger" id="bookDeleteButton" data-url="@routes.BookController.destroy(book.getId)" data-rUrl="@routes.BookController.index()">Delete</button>
+}
